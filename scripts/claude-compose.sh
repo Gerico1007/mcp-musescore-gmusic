@@ -45,7 +45,10 @@ echo "  • And 25+ more composition tools!"
 echo ""
 echo "Example: 'Compose a C Major scale'"
 echo ""
+echo "MuseScore MCP is already registered!"
+echo "Just start Claude Code normally:"
+echo ""
 
 # Launch Claude Code
-# The config is automatically read from ~/.config/claude-code/mcp_servers.json
-claude --mcp musescore
+# MCP server is pre-configured via 'claude mcp add'
+claude

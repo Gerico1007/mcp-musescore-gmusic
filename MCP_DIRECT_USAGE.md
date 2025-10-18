@@ -6,9 +6,26 @@ Now you can ask me to compose music directly! No more Python scripts needed.
 
 ## 🚀 Quick Start
 
-### Step 1: Make Sure Servers are Running
+### One-Time Setup
 
-**Terminal 1 - Start Python MCP Server:**
+Register the MuseScore MCP server with Claude Code (run once):
+
+```bash
+cd ~/workspace/mcp-musescore-gmusic
+claude mcp add --transport stdio musescore python3 server.py
+```
+
+Verify it's registered:
+```bash
+claude mcp list
+```
+
+You should see: `musescore: python3 server.py - ✓ Connected`
+
+### Every Session
+
+**Terminal 1 - Make sure servers are running:**
+
 ```bash
 cd ~/workspace/mcp-musescore-gmusic
 source .venv/bin/activate
@@ -17,20 +34,19 @@ python3 server.py
 
 **MuseScore Window:**
 ```
+Open MuseScore
 Plugins → MuseScore API Server
 ```
 
-### Step 2: Launch Claude Code with MCP
+**Terminal 2 - Start Claude Code:**
 
-**Terminal 2 - Start Claude Code with MCP:**
 ```bash
 ./scripts/claude-compose.sh
+# or simply:
+claude
 ```
 
-Or manually:
-```bash
-claude-code --mcp musescore
-```
+Claude Code will automatically load the MuseScore MCP server! ✨
 
 ### Step 3: Ask Me to Compose!
 
